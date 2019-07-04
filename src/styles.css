@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+    margin: 2rem;
+}
+h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.5;
+    letter-spacing: 0.007em;
+    font-size: 3rem;
+    font-weight: 300;
+}

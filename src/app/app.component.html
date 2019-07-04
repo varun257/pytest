@@ -1,21 +1,38 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<nav class="navbar navbar-light bg-light">
+  <img width="300" alt="Angular Logo" src="../assets/ovhLogo.svg">
+  <a class="navbar-brand" href="#">Ovh labs</a>
+</nav>
+<div class="m-4">
+  <div style="text-align:center">
+    <h1>Pytest</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <p>Pytest is designed with the intention to have a pytest microservice which can be used by any python 2.7 based project to execute test-cases based on pytest and generate the reports in html format.</p>
+      <p>This will facilitate faster dev while ensuring code quality both locally or on sdev, sdev preferred</p>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Default dropright button -->
+    <div class="col-md-2">
+      <label class="oui-select">
+        <select id="select" name="select" class="oui-select__input" ng-model="selectedValue">
+          <option value="pytest">Pytest</option>
+          <option value="junit" disabled>JUnit</option>
+        </select>
+        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+      </label>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary col-md-2" (click)="runTest()">Run {{selectedValue}}
+    <div class="oui-spinner oui-spinner_s" *ngIf="loading">
+      <div class="oui-spinner__container">
+        <div class="oui-spinner__image"></div>
+      </div>
+    </div>
+  </button>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
 <router-outlet></router-outlet>
