@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/dist/pytest'));
 
 app.get('/pytest/run', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
-    const child = exec('ls -l', (error, stdout) => {
+    const child = exec('Make Run', (error, stdout) => {
         console.log(stdout);
         setTimeout(function() {
             res.send({status: 'running'});
