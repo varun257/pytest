@@ -1,6 +1,11 @@
 # Pytest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
+This has a node js server which serves the angular application for front end and can also serve as API server
+
+To build `ng build --prod`
+To run ng app as standalone `ng serve`
+To runt the node js server `node server.js`
 
 ## Development server
 
