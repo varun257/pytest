@@ -7,8 +7,11 @@ import { HttpClient } from '@angular/common/http';
 export class AppService {
 
   constructor(private http: HttpClient) { }
-  url = 'http://localhost:3000/pytest/run';
   runPytest () {
-    return this.http.get(this.url);
+    return this.http.get('http://localhost:3000/pytest/run');
+  }
+
+  getReport() {
+    return this.http.get('http://localhost:3000/pytest/report');
   }
 }

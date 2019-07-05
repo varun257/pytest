@@ -5,7 +5,7 @@
 </nav>
 <div class="m-4">
   <div style="text-align:center">
-    <h1>Pytest</h1>
+    <h1>Unit test</h1>
   </div>
 
   <div class="row">
@@ -16,14 +16,39 @@
   </div>
   <div class="row">
     <!-- Default dropright button -->
-    <div class="col-md-2">
-      <label class="oui-select">
-        <select id="select" name="select" class="oui-select__input" ng-model="selectedValue">
-          <option value="pytest">Pytest</option>
-          <option value="junit" disabled>JUnit</option>
-        </select>
-        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-      </label>
+    <div class="col-md-4">
+      <div class="oui-field">
+        <label for="text-2" class="oui-field__label oui-label">Test type</label>
+        <div class="oui-field__control">
+          <select id="select" name="select" class="oui-select__input" ng-model="selectedValue">
+            <option value="pytest">Pytest</option>
+            <option value="junit" disabled>JUnit</option>
+          </select>
+        </div>
+      </div>
+      <div class="oui-field">
+        <label for="text-2" class="oui-field__label oui-label">Repo path</label>
+        <div class="oui-field__control">
+          <input type="text" id="text-3" name="text-3" class="oui-input">
+        </div>
+      </div>
+      <div class="oui-field">
+        <label for="text-2" class="oui-field__label oui-label">SCM user</label>
+        <div class="oui-field__control">
+          <input type="text" id="text-3" name="text-3" class="oui-input">
+        </div>
+        <div class="oui-field__helper">SCM user that has public token (https) read access to the project on which it intends to run the tests</div>
+      </div>
+      <div class="oui-field">
+        <label for="text-2" class="oui-field__label oui-label">User token</label>
+        <div class="oui-field__control">
+          <input type="text" id="text-3" name="text-3" class="oui-input">
+        </div>
+        <div class="oui-field__helper">HTTPS read token for Scm_User on specified repo</div>
+      </div>
+    </div>
+    <div class="col-md-6 m-5">
+
     </div>
   </div>
   <button type="button" class="btn btn-primary col-md-2" (click)="runTest()">Run {{selectedValue}}
@@ -33,6 +58,7 @@
       </div>
     </div>
   </button>
+  <button *ngIf="showReport" type="button" class="btn btn-primary col-md-2 ml-3" (click)="getReport()">Get report</button>
 </div>
 
 <router-outlet></router-outlet>

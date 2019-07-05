@@ -8,10 +8,11 @@ const app = express()
 const exec = require('child_process').exec;
 
 app.use(express.static(__dirname + '/dist/pytest'));
-
+var execPath = __dirname.replace('pytest', '');
+console.log(execPath)
 app.get('/pytest/run', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
-    const child = exec('Make Run', (error, stdout) => {
+    const child = exec('ls -l', { cwd: execPath }, (error, stdout) => {
         console.log(stdout);
         setTimeout(function() {
             res.send({status: 'running'});
@@ -19,9 +20,12 @@ app.get('/pytest/run', (req, res) => {
     });
 });
 
-app.get('/pytest', (req, res) => {
-    console.log(__dirname);
+app.get('/pytest/report', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.send({ path: execPath + 'report/report.html' });
+});
 
+app.get('/pytest', (req, res) => {
     res.sendFile(path.join(__dirname));
 });
 

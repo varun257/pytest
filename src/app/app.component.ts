@@ -11,13 +11,23 @@ export class AppComponent {
 
   selectedValue = 'pytest';
   loading = false;
+  showReport = false;
+  reportPath = null;
 
   runTest = () => {
     this.loading = true;
     return this._appService
     .runPytest()
     .subscribe(data => {
-      this.loading = false
+      this.loading = false;
+      this.showReport = true;
     });
+  }
+  getReport = () => {
+    return this._appService.getReport().subscribe(res => {
+      this.reportPath = res['path'];
+      window.open(this.reportPath, '_blank');
+      console.log(this.reportPath);
+    })
   }
 }
