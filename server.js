@@ -12,7 +12,7 @@ var execPath = __dirname.replace('pytest', '');
 console.log(execPath)
 app.get('/pytest/run', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
-    const child = exec('ls -l', { cwd: execPath }, (error, stdout) => {
+    const child = exec('Make run', { cwd: execPath }, (error, stdout) => {
         console.log(stdout);
         setTimeout(function() {
             res.send({status: 'running'});
@@ -22,7 +22,12 @@ app.get('/pytest/run', (req, res) => {
 
 app.get('/pytest/report', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
-    res.send({ path: execPath + 'reports/report.html' });
+    res.send({ path: execPath });
+});
+
+app.get('/pytest/getReport', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.sendFile(path.join(execPath + 'reports/test-report.html'));
 });
 
 app.get('/pytest', (req, res) => {

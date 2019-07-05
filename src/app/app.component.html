@@ -5,7 +5,7 @@
 </nav>
 <div class="m-4">
   <div style="text-align:center">
-    <h1>Unit test</h1>
+    <h1>Unit test - As a service</h1>
   </div>
 
   <div class="row">
@@ -23,28 +23,35 @@
           <select id="select" name="select" class="oui-select__input" ng-model="selectedValue">
             <option value="pytest">Pytest</option>
             <option value="junit" disabled>JUnit</option>
+            <option value="junit" disabled>GoTest</option>
+            <option value="junit" disabled>Molecule</option>
           </select>
+        </div>
+      </div>
+      <div class="oui-field">
+        <label for="text-2" class="oui-field__label oui-label">Project</label>
+        <div class="oui-field__control">
+          <input type="text" id="text-3" name="text-3" class="oui-input" value="agora">
         </div>
       </div>
       <div class="oui-field">
         <label for="text-2" class="oui-field__label oui-label">Repo path</label>
         <div class="oui-field__control">
-          <input type="text" id="text-3" name="text-3" class="oui-input">
+          <input type="text" id="text-3" name="text-3" class="oui-input" value="agora-api">
+        </div>
+      </div>
+      <div class="oui-field">
+        <label for="text-2" class="oui-field__label oui-label">Test marker</label>
+        <div class="oui-field__control">
+          <input type="text" id="text-3" name="text-3" class="oui-input" value="ALL">
         </div>
       </div>
       <div class="oui-field">
         <label for="text-2" class="oui-field__label oui-label">SCM user</label>
         <div class="oui-field__control">
-          <input type="text" id="text-3" name="text-3" class="oui-input">
+          <input type="text" id="text-3" name="text-3" class="oui-input" value="ashish.gupta">
         </div>
         <div class="oui-field__helper">SCM user that has public token (https) read access to the project on which it intends to run the tests</div>
-      </div>
-      <div class="oui-field">
-        <label for="text-2" class="oui-field__label oui-label">User token</label>
-        <div class="oui-field__control">
-          <input type="text" id="text-3" name="text-3" class="oui-input">
-        </div>
-        <div class="oui-field__helper">HTTPS read token for Scm_User on specified repo</div>
       </div>
     </div>
     <div class="col-md-6 m-5">

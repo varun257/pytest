@@ -25,9 +25,7 @@ export class AppComponent {
   }
   getReport = () => {
     return this._appService.getReport().subscribe(res => {
-      this.reportPath = res['path'];
-      window.open(this.reportPath, '_blank');
-      console.log(this.reportPath);
+      window.open('http://localhost:3000/pytest/getReport', '_blank');
     })
   }
 }
