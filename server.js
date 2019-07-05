@@ -22,7 +22,7 @@ app.get('/pytest/run', (req, res) => {
 
 app.get('/pytest/report', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
-    res.send({ path: execPath + 'report/report.html' });
+    res.send({ path: execPath + 'reports/report.html' });
 });
 
 app.get('/pytest', (req, res) => {
